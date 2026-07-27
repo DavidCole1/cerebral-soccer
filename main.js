@@ -11,12 +11,14 @@
     toggle.addEventListener("click", function () {
       var open = links.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.classList.toggle("menu-open", open);
     });
     // close menu when a link is chosen
     links.addEventListener("click", function (e) {
       if (e.target.tagName === "A") {
         links.classList.remove("open");
         toggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
       }
     });
   }
