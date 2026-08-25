@@ -1,4 +1,4 @@
-/* CEREBRAL SOCCER — shared behavior */
+/* CEREBRAL SOCCER: shared behavior */
 (function () {
   "use strict";
 
@@ -8,18 +8,42 @@
   var toggle = document.querySelector(".nav-toggle");
   var links = document.getElementById("nav-links");
   if (toggle && links) {
+    var pageRegions = document.querySelectorAll("main, footer");
+    var closeMenu = function (returnFocus) {
+      links.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+      document.body.classList.remove("menu-open");
+      pageRegions.forEach(function (region) { region.inert = false; });
+      if (returnFocus) toggle.focus();
+    };
+
     toggle.addEventListener("click", function () {
       var open = links.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
       document.body.classList.toggle("menu-open", open);
+      pageRegions.forEach(function (region) { region.inert = open; });
+      if (open) {
+        var firstLink = links.querySelector("a");
+        if (firstLink) firstLink.focus();
+      }
     });
-    // close menu when a link is chosen
+
     links.addEventListener("click", function (e) {
       if (e.target.tagName === "A") {
-        links.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("menu-open");
+        closeMenu(false);
       }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        closeMenu(true);
+      }
+    });
+
+    window.matchMedia("(min-width: 861px)").addEventListener("change", function (e) {
+      if (e.matches) closeMenu(false);
     });
   }
 
@@ -73,7 +97,8 @@
       dots.forEach(function (d, i) {
         d.classList.toggle("active", String(i + 1) === idx);
       });
-      if (typeof restartAutoplay === "function") restartAutoplay();
+      if (prevBtn) prevBtn.disabled = idx === "1";
+      if (nextBtn) nextBtn.disabled = idx === String(notes.length);
     };
 
     var scrollToNote = function (i) {
@@ -130,28 +155,16 @@
 
     notes.forEach(function (n) {
       n.addEventListener("click", function () { setActive(n.dataset.anno); });
+      n.addEventListener("keydown", function (e) {
+        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+        e.preventDefault();
+        var current = parseInt(n.dataset.anno, 10) - 1;
+        var target = e.key === "ArrowLeft" ? current - 1 : current + 1;
+        target = Math.max(0, Math.min(notes.length - 1, target));
+        scrollToNote(target);
+        notes[target].focus();
+      });
     });
-
-    /* autoplay: advance every 10s, loop, pause when off-screen or tab hidden.
-       Any manual change (click, arrow, dot, swipe) resets the timer via setActive. */
-    var AUTOPLAY_MS = 10000;
-    var autoTimer = null;
-    var sectionVisible = true;
-    var sampleSection = document.getElementById("sample") || frame;
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (entries) {
-        sectionVisible = entries[0].isIntersecting;
-      }, { threshold: 0.15 }).observe(sampleSection);
-    }
-    var restartAutoplay = function () {
-      if (reduced) return;
-      if (autoTimer) clearInterval(autoTimer);
-      autoTimer = setInterval(function () {
-        if (!sectionVisible || document.hidden) return;
-        var next = parseInt(currentIdx, 10) % notes.length; // 1-based idx -> next 0-based, wraps 4 -> 0
-        scrollToNote(next);
-      }, AUTOPLAY_MS);
-    };
 
     setActive("1");
   }
@@ -167,12 +180,12 @@
       var hp = form.querySelector('input[name="_gotcha"]');
       if (hp && hp.value) { e.preventDefault(); return; }
 
-      // form not connected to Formspree yet — fail gracefully
+      // Form not connected to Formspree yet; fail gracefully.
       if (form.action.indexOf(PLACEHOLDER) !== -1) {
         e.preventDefault();
         if (status) {
           status.textContent =
-            "This form isn’t connected yet. Please email me directly — my address is in the footer below.";
+            "This form isn’t connected yet. Please email me directly using the address in the footer below.";
           status.className = "form-status err show";
         }
         return;
@@ -192,7 +205,7 @@
             form.reset();
             if (status) {
               status.textContent =
-                "Got it — your message is in. I’ll get back to you within 48 hours.";
+                "Thank you. Your message has been received, and I’ll get back to you within 48 hours.";
               status.className = "form-status ok show";
             }
           } else {
@@ -202,7 +215,7 @@
         .catch(function () {
           if (status) {
             status.textContent =
-              "Something went wrong sending the form. Please try again, or email me directly — my address is in the footer.";
+              "Something went wrong while sending the form. Please try again or email me directly using the address in the footer.";
             status.className = "form-status err show";
           }
         })

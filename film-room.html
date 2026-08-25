@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Film Room — Game Film Analysis for Players · Cerebral Soccer</title>
-  <meta name="description" content="Submit your game film and get a timestamped, coach-level breakdown of your decisions, positioning, and habits — with a training plan to match. Remote, any club, any level.">
-  <meta property="og:title" content="The Film Room — Cerebral Soccer">
-  <meta property="og:description" content="Submit your game film and get a timestamped, coach-level breakdown — with a training plan to match. Remote, any club, any level.">
+  <meta name="theme-color" content="#0b241b">
+  <title>Game Film Analysis for Soccer Players | Cerebral Soccer</title>
+  <meta name="description" content="Send Coach Daniel your full match for a private, timestamped review of your decisions, positioning, and habits, plus a practical development plan.">
+  <link rel="canonical" href="https://cerebral-soccer.vercel.app/film-room.html">
+  <meta property="og:title" content="The Film Room | Cerebral Soccer">
+  <meta property="og:description" content="A private, timestamped review of your full match, with clear feedback and a practical development plan.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Cerebral Soccer">
   <meta property="og:url" content="https://cerebral-soccer.vercel.app/film-room.html">
   <meta property="og:image" content="https://cerebral-soccer.vercel.app/images/og-card.png">
+  <meta property="og:image:alt" content="The Film Room by Cerebral Soccer">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Film Room | Cerebral Soccer">
+  <meta name="twitter:description" content="Send in your full match for a private, timestamped review with clear feedback and a practical development plan.">
   <meta name="twitter:image" content="https://cerebral-soccer.vercel.app/images/og-card.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Crect%20width%3D%27100%27%20height%3D%27100%27%20rx%3D%2720%27%20fill%3D%27%230b241b%27/%3E%3Ccircle%20cx%3D%2750%27%20cy%3D%2750%27%20r%3D%2731%27%20fill%3D%27none%27%20stroke%3D%27%23f5f7f2%27%20stroke-width%3D%273.5%27/%3E%3Cpath%20d%3D%27M50%2036%20L61%2044%20L57%2057%20L43%2057%20L39%2044%20Z%27%20fill%3D%27%23ff5a1f%27/%3E%3Cg%20stroke%3D%27%23f5f7f2%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%3E%3Cline%20x1%3D%2750%27%20y1%3D%2736%27%20x2%3D%2750%27%20y2%3D%2724%27/%3E%3Cline%20x1%3D%2761%27%20y1%3D%2744%27%20x2%3D%2770%27%20y2%3D%2738%27/%3E%3Cline%20x1%3D%2757%27%20y1%3D%2757%27%20x2%3D%2763%27%20y2%3D%2768%27/%3E%3Cline%20x1%3D%2743%27%20y1%3D%2757%27%20x2%3D%2737%27%20y2%3D%2768%27/%3E%3Cline%20x1%3D%2739%27%20y1%3D%2744%27%20x2%3D%2730%27%20y2%3D%2738%27/%3E%3C/g%3E%3C/svg%3E">
@@ -20,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How should we film the game?", "acceptedAnswer": {"@type": "Answer", "text": "Elevated and wide beats close and shaky. A phone on a tripod at midfield, filming from a few rows up if possible, following the ball loosely so I can see the players around it. If your club already uses Veo or Trace, that footage is perfect."}}, {"@type": "Question", "name": "Full match or highlights?", "acceptedAnswer": {"@type": "Answer", "text": "Full match, always. Highlights show what went well; development lives in everything else — positioning off the ball, reactions after mistakes, the runs that were never rewarded. That's what my breakdown is for."}}, {"@type": "Question", "name": "How long does it take?", "acceptedAnswer": {"@type": "Answer", "text": "Your written breakdown arrives within 5 days of submission. During peak season (tryouts, playoffs) I'll tell you the current turnaround before you commit."}}, {"@type": "Question", "name": "Who sees my video?", "acceptedAnswer": {"@type": "Answer", "text": "Only me. Your links stay private — I never share or post them — and you can use an unlisted link that only works for people who have it."}}, {"@type": "Question", "name": "Does this work if I train with another club or coach?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — the Film Room is fully club-neutral and remote. Many players use it exactly this way: their club runs team training, and my breakdown gives them an individual development lens their team environment can't."}}]}
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How should we film the game?", "acceptedAnswer": {"@type": "Answer", "text": "Film from an elevated, wide angle whenever possible. A phone on a tripod near midfield can work well if it captures the players around the ball. If your club already uses Veo, Trace, or Hudl, that footage is ideal."}}, {"@type": "Question", "name": "Full match or highlights?", "acceptedAnswer": {"@type": "Answer", "text": "Send the full match. Highlights show the best moments, but development also lives in positioning away from the ball, reactions after mistakes, and runs that did not receive a pass."}}, {"@type": "Question", "name": "How long does it take?", "acceptedAnswer": {"@type": "Answer", "text": "Your written breakdown arrives within 5 days of submission. During busy periods, I'll tell you the current turnaround before you commit."}}, {"@type": "Question", "name": "Who sees my video?", "acceptedAnswer": {"@type": "Answer", "text": "Only me. I do not share or post your video. An unlisted link is a good option because only people with the link can open it."}}, {"@type": "Question", "name": "Does this work if I train with another club or coach?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Film Room is remote and independent of any club. Your team coach handles the group, while the breakdown gives you an individual view of your own decisions and habits."}}]}
   </script>
 </head>
 <body>
@@ -28,12 +33,12 @@
 
   <header class="site-header">
     <div class="container nav-bar">
-      <a class="wordmark" href="index.html" aria-label="Cerebral Soccer — home">
+      <a class="wordmark" href="index.html" aria-label="Cerebral Soccer home">
         <img class="wordmark-logo" src="logo.svg" alt="" width="30" height="30">
         <span class="half">Cerebral&nbsp;</span><span class="lab">Soccer</span>
         <small>Player Development</small>
       </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
         <svg class="icon-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         <svg class="icon-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
       </button>
@@ -55,7 +60,7 @@
         <div class="section-head" style="margin-bottom:0;">
           <p class="eyebrow">Remote · Any club · Any level</p>
           <h1 style="font-size: clamp(2.6rem, 6vw, 4.2rem);">The Film Room</h1>
-          <p class="lede">Games tell the truth. Send me your full match and I'll send back a timestamped, coach-level breakdown of what the film reveals — the decisions, positioning, and habits nobody sees from the sideline.</p>
+          <p class="lede">Send me your full match and I'll show you the decisions, positioning, and habits that are easy to miss from the sideline. You get clear feedback, timestamps, and a plan for what to work on next.</p>
           <p style="margin-top:26px;"><a class="btn btn-cone" href="#submit">Submit your game film</a></p>
         </div>
       </div>
@@ -72,17 +77,17 @@
           <div class="step reveal">
             <span class="step-clock">Step 01</span>
             <h3>Film your match</h3>
-            <p>A phone on a tripod at midfield works. Veo, Trace, Hudl, or an unlisted YouTube upload all work too — whatever your team already uses.</p>
+            <p>A phone on a tripod near midfield can work well. Veo, Trace, Hudl, and unlisted YouTube links are all welcome. Use whichever option your team already has.</p>
           </div>
           <div class="step reveal">
             <span class="step-clock">Step 02</span>
             <h3>Send the link</h3>
-            <p>Use the form below: your video link, position, jersey number, and anything you want me to look at — a bad half, a new position, a recurring problem.</p>
+            <p>Share the link, your position, and how to spot you. You can also tell me what has been frustrating you or what you want to understand better.</p>
           </div>
           <div class="step reveal">
             <span class="step-clock">Step 03</span>
             <h3>Get the breakdown</h3>
-            <p>Within 5 days I send you a timestamped written report covering 12–18 key moments, the patterns behind them, and specific exercises to fix what the film shows.</p>
+            <p>Within 5 days, you'll receive a written report with 12 to 18 key moments, the patterns behind them, and specific work you can take back to the field.</p>
           </div>
         </div>
       </div>
@@ -94,7 +99,7 @@
         <div class="section-head">
           <p class="eyebrow">Sample analysis</p>
           <h2>What you actually get</h2>
-          <p class="lede">Below are four moments from the kind of breakdown I write — a U15 central midfielder, full match. Tap each note to see the moment on the board.</p>
+          <p class="lede">This sample follows a U15 central midfielder through four moments in a full match. Select a note to see what I would point out and why it matters.</p>
         </div>
 
         <div class="film-frame-wrap">
@@ -141,7 +146,7 @@
               <circle cx="146" cy="240" r="4" fill="#ffffff"/>
 
               <!-- ANNO 1 · scanning -->
-              <g class="anno" data-anno="1">
+              <g class="anno active" data-anno="1">
                 <circle cx="300" cy="202" r="18" fill="none" stroke="#ff5a1f" stroke-width="2.5"/>
                 <path d="M312 190 L424 130" stroke="#ff5a1f" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
                 <path d="M314 204 L488 186" stroke="#ff5a1f" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
@@ -179,20 +184,20 @@
 
           <div class="film-note-panel reveal">
           <div class="film-notes" role="group" aria-label="Timestamped analysis notes">
-            <button class="film-note" type="button" data-anno="1" aria-pressed="true">
+            <button class="film-note current" type="button" data-anno="1" aria-pressed="true">
               <span class="stamp">07:12</span>
               <strong>Scanning before receiving</strong>
-              <span class="note-body">You checked your shoulder once in the first 10 minutes. Elite midfielders scan 4–6 times before every reception. Two of your three turnovers start right here.</span>
+              <span class="note-body">You rarely checked your shoulder in the opening 10 minutes. That left you receiving without a clear picture, and two turnovers started here. Scan while the ball is traveling so the next decision is ready before your first touch.</span>
             </button>
             <button class="film-note" type="button" data-anno="2" aria-pressed="false">
               <span class="stamp">23:40</span>
               <strong>Body shape on the half-turn</strong>
-              <span class="note-body">Great moment — you received side-on and played forward in two touches. This is the picture we want every time the ball comes from the back line.</span>
+              <span class="note-body">This is a strong moment. You received side-on, saw the forward option, and moved the ball in two touches. This is the picture we want when the ball comes from the back line.</span>
             </button>
             <button class="film-note" type="button" data-anno="3" aria-pressed="false">
               <span class="stamp">41:05</span>
               <strong>Defensive transition</strong>
-              <span class="note-body">After the giveaway you walked for three seconds while their 8 ran past you. The first five seconds after losing the ball are yours to win — counterpress or recover, never watch.</span>
+              <span class="note-body">After the giveaway, their 8 ran past you while you hesitated. Make the choice quickly: counterpress if you can affect the ball, or recover into shape if you cannot.</span>
             </button>
             <button class="film-note" type="button" data-anno="4" aria-pressed="false">
               <span class="stamp">58:30</span>
@@ -209,7 +214,7 @@
           </div>
         </div>
 
-        <p class="form-note" style="max-width:640px; margin-top:28px;">A full breakdown covers 12–18 moments like these across the whole match. I group them into 2–3 patterns and end with a training plan: what to do about each one, on your own or in sessions with me.</p>
+        <p class="form-note" style="max-width:640px; margin-top:28px;">A full breakdown covers 12 to 18 moments across the match. I group them into 2 or 3 patterns and finish with a practical plan you can use on your own or bring into a session with me.</p>
       </div>
     </section>
 
@@ -218,13 +223,13 @@
       <div class="container split">
         <div class="reveal">
           <p class="eyebrow">Included in every breakdown</p>
-          <h2>Film doesn't flatter. That's the point.</h2>
-          <p>Anyone can tell a player they did great. I use film to tell players the truth in a way they can act on — and it's often the first time a young player really <em>sees</em> their own game.</p>
+          <h2>Film makes the invisible visible</h2>
+          <p>In the moment, it is hard to notice your spacing, body shape, or reaction after the ball moves. Film slows the game down so we can find the pattern and turn it into something useful.</p>
         </div>
         <ul class="included reveal">
-          <li>12–18 timestamped moments with coach's notes</li>
-          <li>Pattern summary: the 2–3 habits behind the moments</li>
-          <li>What you did well — kept, named, and reinforced</li>
+          <li>12 to 18 timestamped moments with coach's notes</li>
+          <li>Pattern summary covering the 2 to 3 habits behind the moments</li>
+          <li>What you did well, clearly identified and reinforced</li>
           <li>A training plan matched to what the film shows</li>
           <li>Position-specific benchmarks for your age group</li>
           <li>Option to review the report live on a call</li>
@@ -238,17 +243,17 @@
         <div class="section-head">
           <p class="eyebrow">Submit</p>
           <h2>Send in your match</h2>
-          <p class="lede">Upload your game anywhere I can watch it — unlisted YouTube, Veo, Hudl, or Trace — then drop the link here.</p>
+          <p class="lede">Upload your game to unlisted YouTube, Veo, Hudl, Trace, or another accessible platform, then send me the link and a few details about the player.</p>
         </div>
 
-        <form class="form-shell" action="https://formspree.io/f/mjgnkwee" method="POST" data-dsl-form novalidate="">
+        <form class="form-shell" action="https://formspree.io/f/mjgnkwee" method="POST" data-dsl-form>
           <div class="form-grid">
             <div>
               <label for="f-name">Player name</label>
               <input id="f-name" name="player_name" type="text" autocomplete="name" required>
             </div>
             <div>
-              <label for="f-email">Email <span class="hint">(parent's for players under 18)</span></label>
+              <label for="f-email">Email <span class="hint">(parent or guardian for players under 18)</span></label>
               <input id="f-email" name="email" type="email" autocomplete="email" required>
             </div>
             <div>
@@ -256,7 +261,7 @@
               <input id="f-age" name="age_position" type="text" placeholder="e.g. 14, center mid" required>
             </div>
             <div>
-              <label for="f-spot">How do I spot you? <span class="hint">(jersey # and color)</span></label>
+              <label for="f-spot">How do I spot you? <span class="hint">(jersey number and kit color)</span></label>
               <input id="f-spot" name="jersey" type="text" placeholder="e.g. #8, red kit" required>
             </div>
             <div class="full">
@@ -269,7 +274,7 @@
             </div>
           </div>
           <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="hidden" name="_subject" value="New film submission — Cerebral Soccer website">
+          <input type="hidden" name="_subject" value="New film submission | Cerebral Soccer website">
           <div class="form-status" role="status" aria-live="polite"></div>
           <p class="form-note"><button class="btn btn-cone" type="submit" data-label="Submit film">Submit film</button></p>
           <p class="form-note">I'll confirm within 24 hours and you'll have your full breakdown within 5 days.</p>
@@ -287,23 +292,23 @@
         <div class="faq">
           <details>
             <summary>How should we film the game?</summary>
-            <p>Elevated and wide beats close and shaky. A phone on a tripod at midfield, filming from a few rows up if possible, following the ball loosely so I can see the players around it. If your club already uses Veo or Trace, that footage is perfect.</p>
+            <p>Film from an elevated, wide angle whenever possible. A phone on a tripod near midfield can work well if it captures the players around the ball. If your club already uses Veo, Trace, or Hudl, that footage is ideal.</p>
           </details>
           <details>
             <summary>Full match or highlights?</summary>
-            <p>Full match, always. Highlights show what went well; development lives in everything else — positioning off the ball, reactions after mistakes, the runs that were never rewarded. That's what my breakdown is for.</p>
+            <p>Send the full match. Highlights show the best moments, but development also lives in positioning away from the ball, reactions after mistakes, and runs that did not receive a pass.</p>
           </details>
           <details>
             <summary>How long does it take?</summary>
-            <p>Your written breakdown arrives within 5 days of submission. During peak season (tryouts, playoffs) I'll tell you the current turnaround before you commit.</p>
+            <p>Your written breakdown arrives within 5 days of submission. During busy periods, I'll tell you the current turnaround before you commit.</p>
           </details>
           <details>
             <summary>Who sees my video?</summary>
-            <p>Only me. Your links stay private — I never share or post them — and you can use an unlisted link that only works for people who have it.</p>
+            <p>Only me. I do not share or post your video. An unlisted link is a good option because only people with the link can open it.</p>
           </details>
           <details>
             <summary>Does this work if I train with another club or coach?</summary>
-            <p>Yes — the Film Room is fully club-neutral and remote. Many players use it exactly this way: their club runs team training, and my breakdown gives them an individual development lens their team environment can't.</p>
+            <p>Yes. The Film Room is remote and independent of any club. Your team coach handles the group, while the breakdown gives you an individual view of your own decisions and habits.</p>
           </details>
         </div>
       </div>
@@ -315,13 +320,13 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a class="wordmark" href="index.html" aria-label="Cerebral Soccer — home">
+          <a class="wordmark" href="index.html" aria-label="Cerebral Soccer home">
             <span class="half">Cerebral&nbsp;</span><span class="lab">Soccer</span>
           </a>
-          <p style="margin-top:14px; max-width: 32em;">I'm Coach Daniel — private soccer training and film analysis in Alexandria, Virginia. Ten years of player development, from grassroots to MLS NEXT.</p>
+          <p style="margin-top:14px; max-width: 32em;">I'm Coach Daniel. I offer private soccer training in Alexandria and remote film analysis for players who want to understand the game, not just repeat drills.</p>
         </div>
         <div>
-          <h4>Site</h4>
+          <h2 class="footer-heading">Site</h2>
           <ul>
             <li><a href="training.html">Training</a></li>
             <li><a href="film-room.html">Film Room</a></li>
@@ -330,12 +335,10 @@
           </ul>
         </div>
         <div>
-          <h4>Contact</h4>
+          <h2 class="footer-heading">Contact</h2>
           <ul>
-            <!-- SWAP: replace Instagram placeholder with Daniel's real Instagram URL -->
             <li><a href="mailto:dansoccerlab@gmail.com">dansoccerlab@gmail.com</a></li>
             <li><a href="tel:+15717331169">(571) 733-1169</a></li>
-            <li><a href="https://instagram.com" rel="noopener">Instagram</a></li>
             <li>Alexandria, VA</li>
           </ul>
         </div>

@@ -1,12 +1,12 @@
-# Cerebral Soccer — website
+# Cerebral Soccer website
 
-Static site for Coach Daniel. No build step, no dependencies — plain HTML/CSS/JS, ready for GitHub + Vercel.
+Static site for Coach Daniel. No build step or dependencies. The site uses plain HTML, CSS, and JavaScript and is ready for GitHub and Vercel.
 
 ## Pages
 
 | File | Page |
 |---|---|
-| `index.html` | Home — hero, credentials, programs, testimonials, inquiry form |
+| `index.html` | Home page with hero, credentials, programs, approach, and inquiry form |
 | `training.html` | Private & small group training, session structure, FAQ |
 | `film-room.html` | Film analysis: how it works, interactive sample analysis, submission form, FAQ |
 | `about.html` | Coach Daniel bio, license ladder, timeline, philosophy |
@@ -22,20 +22,18 @@ Any later edit: commit + push, Vercel redeploys automatically.
 
 ## Status
 
-Live at https://cerebral-soccer.vercel.app — forms connected (Formspree → dansoccerlab@gmail.com),
-phone & email in footer, SEO files (sitemap.xml, robots.txt, JSON-LD), Search Console verified,
-homepage indexed by Google. Google Business Profile created (verification pending).
+Live at https://cerebral-soccer.vercel.app. Forms are connected through Formspree to dansoccerlab@gmail.com. Contact details appear in the footer, SEO files are in place, Search Console is verified, and Google has indexed the homepage. The Google Business Profile has been created and is awaiting verification.
 
-## Remaining swaps
+## Optional next steps
 
-1. **Testimonials** — the three quotes on `index.html` are placeholders. Replace with real family quotes.
-2. **Instagram** — footer link points to instagram.com generically; set Daniel's real profile URL or remove.
-3. **Photos (optional)** — overwrite `images/coach-huddle.jpg` and `images/coach-session.jpg` anytime; no HTML changes needed.
-4. **Custom domain (optional)** — add in Vercel → Settings → Domains, then update og:url/og:image URLs in all pages + sitemap.xml.
+1. **Real testimonials:** Add verified family or player quotes when permission has been confirmed.
+2. **Instagram:** Add Daniel's profile when the final account URL is available.
+3. **Photos:** Overwrite the images in `images/` at any time. No HTML changes are needed when filenames stay the same.
+4. **Custom domain:** Add it in Vercel → Settings → Domains, then update the canonical, og:url, and og:image URLs on every page and in sitemap.xml.
 
 ## Notes
 
 - Fonts load from Google Fonts (Big Shoulders Display, Instrument Sans, Spline Sans Mono).
 - The Film Room sample analysis is interactive: clicking a timestamped note switches the annotation on the tactical board (`main.js`).
-- Tested at 1440px, 390px, 360px and 320px widths — no horizontal overflow; mobile menu, film-note sync, and form guard all verified.
+- Tested at widths of 1440px, 390px, 360px, and 320px. There is no horizontal overflow, and the mobile menu, film-note sync, and form guard are verified.
 - Accessibility: skip link, labeled inputs, `aria-current` nav state, visible focus styles, `prefers-reduced-motion` respected.
