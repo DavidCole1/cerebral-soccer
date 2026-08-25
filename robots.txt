@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /og.html
 
-Sitemap: https://cerebral-soccer.vercel.app/sitemap.xml
+Sitemap: https://360-soccer-training.vercel.app/sitemap.xml

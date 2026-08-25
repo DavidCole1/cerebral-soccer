@@ -1,4 +1,4 @@
-# Cerebral Soccer — website
+# 360 Soccer Training — website
 
 Static site for Coach Daniel. No build step, no dependencies — plain HTML/CSS/JS, ready for GitHub + Vercel.
 
@@ -13,7 +13,7 @@ Static site for Coach Daniel. No build step, no dependencies — plain HTML/CSS/
 
 ## Deploy (GitHub + Vercel)
 
-1. Create a new GitHub repo (e.g. `cerebral-soccer`) and push this folder's contents to the repo root.
+1. Create a new GitHub repo (e.g. `360-soccer-training`) and push this folder's contents to the repo root.
 2. In Vercel: **Add New → Project → Import** the repo.
 3. Framework preset: **Other**. Leave build command and output directory empty. Deploy.
 4. Add a custom domain in Vercel → Project → Settings → Domains when ready.
@@ -22,7 +22,7 @@ Any later edit: commit + push, Vercel redeploys automatically.
 
 ## Status
 
-Live at https://cerebral-soccer.vercel.app — forms connected (Formspree → dansoccerlab@gmail.com),
+Live at https://360-soccer-training.vercel.app — forms connected (Formspree → dansoccerlab@gmail.com),
 phone & email in footer, SEO files (sitemap.xml, robots.txt, JSON-LD), Search Console verified,
 homepage indexed by Google. Google Business Profile created (verification pending).
 

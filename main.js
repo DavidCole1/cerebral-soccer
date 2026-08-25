@@ -1,4 +1,4 @@
-/* CEREBRAL SOCCER — shared behavior */
+/* 360 SOCCER TRAINING — shared behavior */
 (function () {
   "use strict";
 
