@@ -1,4 +1,4 @@
-/* 360 SOCCER TRAINING — shared behavior */
+/* 360 SOCCER TRAINING shared behavior */
 (function () {
   "use strict";
 
@@ -45,6 +45,82 @@
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---------- training page background clips ---------- */
+  var trainingHero = document.querySelector("[data-training-hero]");
+  if (trainingHero) {
+    var trainingClips = [
+      "videos/training-01.m4v",
+      "videos/training-02.m4v",
+      "videos/training-03.m4v",
+      "videos/training-04.m4v"
+    ];
+    var heroVideos = trainingHero.querySelectorAll("video");
+    var activeVideo = 0;
+    var activeClip = 0;
+    var heroTimer = null;
+
+    var scheduleHeroTransition = function () {
+      if (reduced || document.hidden) return;
+      var current = heroVideos[activeVideo];
+      var duration = Number.isFinite(current.duration) ? current.duration : 5;
+      var remaining = Math.max(1.7, duration - current.currentTime);
+      clearTimeout(heroTimer);
+      heroTimer = setTimeout(showNextTrainingClip, Math.max(1000, (remaining - 0.7) * 1000));
+    };
+
+    var showNextTrainingClip = function () {
+      var current = heroVideos[activeVideo];
+      var nextVideoIndex = activeVideo === 0 ? 1 : 0;
+      var next = heroVideos[nextVideoIndex];
+      var nextClip = (activeClip + 1) % trainingClips.length;
+
+      if (!next.src.endsWith(trainingClips[nextClip])) {
+        next.dataset.clip = String(nextClip);
+        next.src = trainingClips[nextClip];
+        next.load();
+      }
+
+      var beginTransition = function () {
+        next.currentTime = 0;
+        var playPromise = next.play();
+        if (playPromise) {
+          playPromise.then(function () {
+            next.classList.add("is-active");
+            current.classList.remove("is-active");
+            activeVideo = nextVideoIndex;
+            activeClip = nextClip;
+            setTimeout(function () {
+              current.pause();
+              var queuedClip = (activeClip + 1) % trainingClips.length;
+              current.dataset.clip = String(queuedClip);
+              current.src = trainingClips[queuedClip];
+              current.load();
+            }, 720);
+            scheduleHeroTransition();
+          }).catch(function () {
+            current.classList.add("is-active");
+          });
+        }
+      };
+
+      if (next.readyState >= 3) beginTransition();
+      else next.addEventListener("canplay", beginTransition, { once: true });
+    };
+
+    if (!reduced && heroVideos.length === 2) {
+      var firstPlay = heroVideos[0].play();
+      if (firstPlay) firstPlay.then(scheduleHeroTransition).catch(function () {});
+      document.addEventListener("visibilitychange", function () {
+        clearTimeout(heroTimer);
+        if (document.hidden) {
+          heroVideos.forEach(function (video) { video.pause(); });
+        } else {
+          heroVideos[activeVideo].play().then(scheduleHeroTransition).catch(function () {});
+        }
+      });
+    }
   }
 
   /* ---------- film room: sync notes with frame annotations ---------- */
@@ -167,12 +243,12 @@
       var hp = form.querySelector('input[name="_gotcha"]');
       if (hp && hp.value) { e.preventDefault(); return; }
 
-      // form not connected to Formspree yet — fail gracefully
+      // Show a helpful fallback when the form is not connected.
       if (form.action.indexOf(PLACEHOLDER) !== -1) {
         e.preventDefault();
         if (status) {
           status.textContent =
-            "This form isn’t connected yet. Please email me directly — my address is in the footer below.";
+            "This form isn’t connected yet. Please email me directly using the address in the footer below.";
           status.className = "form-status err show";
         }
         return;
@@ -192,7 +268,7 @@
             form.reset();
             if (status) {
               status.textContent =
-                "Got it — your message is in. I’ll get back to you within 48 hours.";
+                "Got it. Your message is in, and I’ll get back to you within 48 hours.";
               status.className = "form-status ok show";
             }
           } else {
@@ -202,7 +278,7 @@
         .catch(function () {
           if (status) {
             status.textContent =
-              "Something went wrong sending the form. Please try again, or email me directly — my address is in the footer.";
+              "Something went wrong while sending the form. Please try again or email me directly using the address in the footer.";
             status.className = "form-status err show";
           }
         })
