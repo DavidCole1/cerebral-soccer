@@ -51,73 +51,55 @@
   var trainingHero = document.querySelector("[data-training-hero]");
   if (trainingHero) {
     var trainingClips = [
-      "videos/training-01.m4v",
-      "videos/training-02.m4v",
-      "videos/training-03.m4v",
-      "videos/training-04.m4v"
+      "videos/training-01.mp4",
+      "videos/training-02.mp4",
+      "videos/training-03.mp4",
+      "videos/training-04.mp4"
     ];
-    var heroVideos = trainingHero.querySelectorAll("video");
-    var activeVideo = 0;
+    var trainingVideo = trainingHero.querySelector("video");
     var activeClip = 0;
-    var heroTimer = null;
+    var changingClip = false;
 
-    var scheduleHeroTransition = function () {
-      if (reduced || document.hidden) return;
-      var current = heroVideos[activeVideo];
-      var duration = Number.isFinite(current.duration) ? current.duration : 5;
-      var remaining = Math.max(1.7, duration - current.currentTime);
-      clearTimeout(heroTimer);
-      heroTimer = setTimeout(showNextTrainingClip, Math.max(1000, (remaining - 0.7) * 1000));
+    var playTrainingVideo = function () {
+      trainingVideo.muted = true;
+      trainingVideo.defaultMuted = true;
+      trainingVideo.playsInline = true;
+      var playPromise = trainingVideo.play();
+      if (playPromise) {
+        playPromise.then(function () {
+          changingClip = false;
+        }, function () {
+          changingClip = false;
+        });
+      } else {
+        changingClip = false;
+      }
     };
 
     var showNextTrainingClip = function () {
-      var current = heroVideos[activeVideo];
-      var nextVideoIndex = activeVideo === 0 ? 1 : 0;
-      var next = heroVideos[nextVideoIndex];
-      var nextClip = (activeClip + 1) % trainingClips.length;
-
-      if (!next.src.endsWith(trainingClips[nextClip])) {
-        next.dataset.clip = String(nextClip);
-        next.src = trainingClips[nextClip];
-        next.load();
-      }
-
-      var beginTransition = function () {
-        next.currentTime = 0;
-        var playPromise = next.play();
-        if (playPromise) {
-          playPromise.then(function () {
-            next.classList.add("is-active");
-            current.classList.remove("is-active");
-            activeVideo = nextVideoIndex;
-            activeClip = nextClip;
-            setTimeout(function () {
-              current.pause();
-              var queuedClip = (activeClip + 1) % trainingClips.length;
-              current.dataset.clip = String(queuedClip);
-              current.src = trainingClips[queuedClip];
-              current.load();
-            }, 720);
-            scheduleHeroTransition();
-          }).catch(function () {
-            current.classList.add("is-active");
-          });
-        }
-      };
-
-      if (next.readyState >= 3) beginTransition();
-      else next.addEventListener("canplay", beginTransition, { once: true });
+      if (changingClip || reduced) return;
+      changingClip = true;
+      activeClip = (activeClip + 1) % trainingClips.length;
+      trainingVideo.dataset.clip = String(activeClip);
+      trainingVideo.src = trainingClips[activeClip];
+      trainingVideo.load();
+      playTrainingVideo();
     };
 
-    if (!reduced && heroVideos.length === 2) {
-      var firstPlay = heroVideos[0].play();
-      if (firstPlay) firstPlay.then(scheduleHeroTransition).catch(function () {});
+    if (trainingVideo) {
+      if (reduced) {
+        trainingVideo.removeAttribute("autoplay");
+        trainingVideo.pause();
+      } else {
+        trainingVideo.addEventListener("ended", showNextTrainingClip);
+        playTrainingVideo();
+      }
+
       document.addEventListener("visibilitychange", function () {
-        clearTimeout(heroTimer);
         if (document.hidden) {
-          heroVideos.forEach(function (video) { video.pause(); });
-        } else {
-          heroVideos[activeVideo].play().then(scheduleHeroTransition).catch(function () {});
+          trainingVideo.pause();
+        } else if (!reduced) {
+          playTrainingVideo();
         }
       });
     }
