@@ -367,10 +367,6 @@ p { margin: 0 0 1em; }
   filter: saturate(0.8) contrast(1.08) brightness(0.8);
   transform: scale(1.015);
 }
-.training-hero-video[data-clip="0"] { --mobile-focus-x: 70%; --mobile-focus-y: 58%; }
-.training-hero-video[data-clip="1"] { --desktop-focus-y: 70%; --mobile-focus-x: 52%; --mobile-focus-y: 64%; }
-.training-hero-video[data-clip="2"] { --desktop-focus-y: 70%; --mobile-focus-x: 43%; --mobile-focus-y: 64%; }
-.training-hero-video[data-clip="3"] { --mobile-focus-x: 50%; --mobile-focus-y: 64%; }
 .training-hero-content { width: 100%; }
 .training-hero .section-head { max-width: 700px; }
 .training-hero .lede {
@@ -387,11 +383,12 @@ p { margin: 0 0 1em; }
   }
   .training-hero-media::after {
     background:
-      linear-gradient(90deg, rgba(9, 9, 9, 0.88), rgba(9, 9, 9, 0.62)),
-      linear-gradient(180deg, rgba(181, 17, 25, 0.12), rgba(9, 9, 9, 0.58));
+      linear-gradient(90deg, rgba(9, 9, 9, 0.48), rgba(9, 9, 9, 0.22)),
+      linear-gradient(180deg, rgba(181, 17, 25, 0.02), rgba(9, 9, 9, 0.2));
   }
   .training-hero-video {
     object-position: var(--mobile-focus-x, 50%) var(--mobile-focus-y, 55%);
+    filter: saturate(0.95) contrast(1.02) brightness(1.08);
   }
 }
 

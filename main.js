@@ -50,48 +50,22 @@
   /* ---------- training page background clips ---------- */
   var trainingHero = document.querySelector("[data-training-hero]");
   if (trainingHero) {
-    var trainingClips = [
-      "videos/training-01.mp4",
-      "videos/training-02.mp4",
-      "videos/training-03.mp4",
-      "videos/training-04.mp4"
-    ];
     var trainingVideo = trainingHero.querySelector("video");
-    var activeClip = 0;
-    var changingClip = false;
 
     var playTrainingVideo = function () {
       trainingVideo.muted = true;
       trainingVideo.defaultMuted = true;
       trainingVideo.playsInline = true;
       var playPromise = trainingVideo.play();
-      if (playPromise) {
-        playPromise.then(function () {
-          changingClip = false;
-        }, function () {
-          changingClip = false;
-        });
-      } else {
-        changingClip = false;
-      }
-    };
-
-    var showNextTrainingClip = function () {
-      if (changingClip || reduced) return;
-      changingClip = true;
-      activeClip = (activeClip + 1) % trainingClips.length;
-      trainingVideo.dataset.clip = String(activeClip);
-      trainingVideo.src = trainingClips[activeClip];
-      trainingVideo.load();
-      playTrainingVideo();
+      if (playPromise) playPromise.catch(function () {});
     };
 
     if (trainingVideo) {
       if (reduced) {
         trainingVideo.removeAttribute("autoplay");
+        trainingVideo.removeAttribute("loop");
         trainingVideo.pause();
       } else {
-        trainingVideo.addEventListener("ended", showNextTrainingClip);
         playTrainingVideo();
       }
 
@@ -101,6 +75,10 @@
         } else if (!reduced) {
           playTrainingVideo();
         }
+      });
+
+      window.addEventListener("pageshow", function () {
+        if (!reduced && !document.hidden) playTrainingVideo();
       });
     }
   }
