@@ -30,12 +30,12 @@ homepage indexed by Google. Google Business Profile created (verification pendin
 
 1. **Testimonials** use the four player and parent quotes supplied for the site.
 2. **Instagram** currently points to instagram.com. Set Daniel's real profile URL or remove the link.
-3. **Photos (optional)** can be replaced by overwriting `images/coach-huddle.jpg` and `images/coach-session.jpg`. No HTML changes are needed.
+3. **Photos and artwork (optional)** can be replaced by overwriting `images/tactical-board.jpg` and `images/coach-session.jpg`. No HTML changes are needed.
 4. **Custom domain (optional)** can be added in Vercel under Settings, then Domains. Afterward, update the social URLs in all pages and `sitemap.xml`.
 
 ## Notes
 
 - Fonts load from Google Fonts (Big Shoulders Display, Instrument Sans, Spline Sans Mono).
-- The Film Room sample analysis is interactive: clicking a timestamped note switches the annotation on the tactical board (`main.js`).
+- The Game Review sample is interactive: clicking a timestamped note switches the annotation on the tactical board (`main.js`).
 - Tested at 1440px, 390px, 360px and 320px widths with no horizontal overflow. The mobile menu, film note sync, and form guard are verified.
 - Accessibility: skip link, labeled inputs, `aria-current` nav state, visible focus styles, `prefers-reduced-motion` respected.

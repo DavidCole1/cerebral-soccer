@@ -83,7 +83,7 @@
     }
   }
 
-  /* ---------- film room: sync notes with frame annotations ---------- */
+  /* ---------- game review: sync notes with frame annotations ---------- */
   var notes = document.querySelectorAll(".film-note");
   var frame = document.querySelector(".film-frame");
   if (notes.length && frame) {
