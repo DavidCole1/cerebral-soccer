@@ -376,8 +376,8 @@ p { margin: 0 0 1em; }
   object-fit: cover;
   object-position: center var(--desktop-focus-y, 52%);
   opacity: 1;
-  filter: saturate(0.8) contrast(1.08) brightness(0.8);
-  transform: scale(1.015);
+  filter: saturate(0.82) contrast(1.07) brightness(0.86);
+  transform: scale(1.045);
 }
 .training-hero-content { width: 100%; }
 .training-hero .section-head { max-width: 700px; }
@@ -400,7 +400,7 @@ p { margin: 0 0 1em; }
   }
   .training-hero-video {
     object-position: var(--mobile-focus-x, 50%) var(--mobile-focus-y, 55%);
-    filter: saturate(0.94) contrast(1.03) brightness(1.02);
+    filter: saturate(0.95) contrast(1.03) brightness(1.07);
   }
 }
 
