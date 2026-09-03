@@ -230,7 +230,7 @@ p { margin: 0 0 1em; }
   margin-left: 10px;
   display: none;
 }
-@media (min-width: 1020px) {
+@media (min-width: 1180px) {
   .wordmark small { display: inline; }
 }
 
@@ -286,7 +286,7 @@ p { margin: 0 0 1em; }
 .nav-toggle[aria-expanded="true"] .icon-open { display: none; }
 .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
 
-@media (max-width: 860px) {
+@media (max-width: 1120px) {
   :root { --header-height: 78px; }
   .site-header .wordmark-logo { width: 48px; height: 57px; margin-right: 9px; }
   .wordmark { font-size: 1.28rem; letter-spacing: 0.03em; }
