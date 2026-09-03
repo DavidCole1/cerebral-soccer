@@ -30,7 +30,7 @@ homepage indexed by Google. Google Business Profile created (verification pendin
 
 1. **Testimonials** use the four player and parent quotes supplied for the site.
 2. **Instagram** currently points to instagram.com. Set Daniel's real profile URL or remove the link.
-3. **Photos and artwork (optional)** can be replaced by overwriting `images/tactical-board.jpg` and `images/coach-session.jpg`. No HTML changes are needed.
+3. **Photos and artwork (optional)** can be replaced by overwriting `images/coach-story.jpg` and `images/coach-session.jpg`. No HTML changes are needed.
 4. **Custom domain (optional)** can be added in Vercel under Settings, then Domains. Afterward, update the social URLs in all pages and `sitemap.xml`.
 
 ## Notes
