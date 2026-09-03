@@ -114,11 +114,17 @@
             <path d="M170 122V338M62 230H278" stroke="#ed1c24" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="4 7"/>
             <circle cx="170" cy="230" r="57" fill="#090909" stroke="#ffffff" stroke-opacity="0.22"/>
             <text x="170" y="246" fill="#ffffff" font-family="'Big Shoulders Display', sans-serif" font-size="58" font-style="italic" font-weight="800" letter-spacing="-2" text-anchor="middle">360</text>
-            <g fill="#ffffff" font-family="'Spline Sans Mono', monospace" font-size="8.5" letter-spacing="1.1" text-anchor="middle">
-              <text x="170" y="91">TECHNIQUE</text>
-              <text x="170" y="378">TACTICAL UNDERSTANDING</text>
-              <text x="36" y="233" transform="rotate(-90 36 233)">DECISION MAKING</text>
-              <text x="304" y="233" transform="rotate(90 304 233)">SPATIAL AWARENESS</text>
+            <defs>
+              <path id="label-top" d="M71.7 131.7 A139 139 0 0 1 268.3 131.7"/>
+              <path id="label-right" d="M268.3 131.7 A139 139 0 0 1 268.3 328.3"/>
+              <path id="label-bottom" d="M71.7 328.3 A139 139 0 0 0 268.3 328.3"/>
+              <path id="label-left" d="M71.7 328.3 A139 139 0 0 1 71.7 131.7"/>
+            </defs>
+            <g fill="#ffffff" stroke="#151515" stroke-width="2.5" paint-order="stroke fill" font-family="'Spline Sans Mono', monospace" font-size="10.5" font-weight="700" letter-spacing="0.8" text-anchor="middle">
+              <text><textPath href="#label-top" startOffset="50%">TECHNIQUE</textPath></text>
+              <text><textPath href="#label-right" startOffset="50%">SPATIAL AWARENESS</textPath></text>
+              <text><textPath href="#label-bottom" startOffset="50%">TACTICAL UNDERSTANDING</textPath></text>
+              <text><textPath href="#label-left" startOffset="50%">DECISION MAKING</textPath></text>
             </g>
             <g class="ball">
               <circle cx="170" cy="122" r="10" fill="#ed1c24"/>
