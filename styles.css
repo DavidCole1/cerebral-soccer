@@ -800,87 +800,83 @@ p { margin: 0 0 1em; }
   .film-frame .anno { transition: none; }
 }
 
-/* connects film analysis to the work players take onto the field */
-.review-bridge {
-  padding: 0 0 96px;
-  overflow: hidden;
-}
-.review-bridge-card {
+/* Game Review hero */
+.game-review-hero {
   position: relative;
-  min-height: clamp(420px, 44vw, 540px);
-  margin: 0;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 590px;
   overflow: hidden;
-  background: var(--night);
-  border: 1px solid var(--line-dark);
-  border-bottom: 3px solid var(--cone);
-  border-radius: var(--radius);
 }
-.review-bridge-image,
-.review-bridge-image::after,
-.review-bridge-image img {
+.game-review-hero-media,
+.game-review-hero-media::after,
+.game-review-hero-media img {
   position: absolute;
   inset: 0;
 }
-.review-bridge-image img {
+.game-review-hero-media {
+  z-index: -1;
+}
+.game-review-hero-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: saturate(0.78) contrast(1.06) brightness(0.84);
+  filter: saturate(0.72) contrast(1.06) brightness(0.74);
 }
-.review-bridge-image::after {
+.game-review-hero-media::after {
   content: "";
   background:
-    linear-gradient(90deg, rgba(9, 9, 9, 0.06) 20%, rgba(9, 9, 9, 0.28) 47%, rgba(9, 9, 9, 0.9) 72%, rgba(9, 9, 9, 0.97) 100%),
-    linear-gradient(180deg, rgba(9, 9, 9, 0.08), rgba(9, 9, 9, 0.26));
+    linear-gradient(90deg, rgba(9, 9, 9, 0.12) 8%, rgba(9, 9, 9, 0.28) 38%, rgba(9, 9, 9, 0.86) 66%, rgba(9, 9, 9, 0.97) 100%),
+    linear-gradient(180deg, rgba(9, 9, 9, 0.1), rgba(9, 9, 9, 0.3));
 }
-.review-bridge-copy {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  right: clamp(30px, 5vw, 72px);
-  width: min(39%, 430px);
-  transform: translateY(-50%);
-  color: var(--chalk);
+.game-review-hero-content {
+  width: 100%;
 }
-.review-bridge-copy .eyebrow { margin-bottom: 14px; }
-.review-bridge-copy h2 {
-  margin-bottom: 18px;
-  font-size: clamp(2.2rem, 4vw, 3.3rem);
+.game-review-hero-copy {
+  width: min(48%, 560px);
+  max-width: none;
+  margin: 0 0 0 auto;
 }
-.review-bridge-copy > p:last-child {
-  margin: 0;
-  color: var(--muted-dark);
-  font-size: 1.05rem;
+.game-review-hero-copy h1 {
+  font-size: clamp(3.4rem, 6vw, 5.2rem);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.38);
 }
 
-@media (max-width: 900px) {
-  .review-bridge { padding-bottom: 72px; }
-  .review-bridge-card { min-height: 0; }
-  .review-bridge-image {
-    position: relative;
-    aspect-ratio: 4 / 3;
+@media (max-width: 800px) {
+  .game-review-hero {
+    min-height: 690px;
+    align-items: flex-end;
+    padding-top: 280px;
   }
-  .review-bridge-image::after {
-    background: linear-gradient(180deg, rgba(9, 9, 9, 0.02) 62%, rgba(9, 9, 9, 0.48) 100%);
+  .game-review-hero-media img {
+    object-position: 38% center;
+    filter: saturate(0.72) contrast(1.06) brightness(0.72);
   }
-  .review-bridge-image img { object-position: 38% center; }
-  .review-bridge-copy {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: auto;
-    padding: 30px;
-    transform: none;
-    background: var(--night);
+  .game-review-hero-media::after {
+    background:
+      linear-gradient(90deg, rgba(9, 9, 9, 0.14), rgba(9, 9, 9, 0.26)),
+      linear-gradient(180deg, rgba(9, 9, 9, 0.08) 12%, rgba(9, 9, 9, 0.42) 46%, rgba(9, 9, 9, 0.93) 72%, var(--night) 100%);
+  }
+  .game-review-hero-copy {
+    width: 100%;
+    margin-left: 0;
   }
 }
 
 @media (max-width: 480px) {
-  .review-bridge { padding-bottom: 56px; }
-  .review-bridge-copy { padding: 26px 22px 28px; }
-  .review-bridge-copy h2 { font-size: 2.15rem; }
-  .review-bridge-copy > p:last-child { font-size: 1rem; }
+  .game-review-hero {
+    min-height: 660px;
+    padding-top: 245px;
+    padding-bottom: 54px;
+  }
+  .game-review-hero-copy h1 {
+    font-size: clamp(3.25rem, 16vw, 4.25rem);
+  }
+  .game-review-hero-copy .lede {
+    font-size: 1.05rem;
+  }
 }
 
 /* steps */
