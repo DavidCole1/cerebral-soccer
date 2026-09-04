@@ -806,7 +806,7 @@ p { margin: 0 0 1em; }
   isolation: isolate;
   display: flex;
   align-items: center;
-  min-height: 590px;
+  min-height: 650px;
   overflow: hidden;
 }
 .game-review-hero-media,
@@ -822,7 +822,7 @@ p { margin: 0 0 1em; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 29%;
   filter: saturate(0.72) contrast(1.06) brightness(0.74);
 }
 .game-review-hero-media::after {
