@@ -191,8 +191,9 @@
           if (res.ok) {
             form.reset();
             if (status) {
-              status.textContent =
-                "Got it — your message is in. I’ll get back to you within 48 hours.";
+              status.textContent = form.querySelector('select[name="interested_in"]')
+                ? "Thanks — your session request is in. I'll follow up within 48 hours to confirm the time, location, and payment details."
+                : "Got it — your message is in. I’ll get back to you within 48 hours.";
               status.className = "form-status ok show";
             }
           } else {
