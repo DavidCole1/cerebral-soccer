@@ -372,6 +372,16 @@ p { margin: 0 0 1em; }
 }
 
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+.hero-rate {
+  color: var(--muted-dark);
+  margin: -12px 0 24px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+.hero-rate strong { color: var(--chalk); font-weight: 600; }
+.training-rate { margin: 20px 0 0; color: var(--muted-dark); }
+.training-rate strong { color: var(--chalk); font-weight: 700; }
 
 .hero-cred {
   margin-top: 44px;
@@ -920,6 +930,41 @@ p { margin: 0 0 1em; }
 .faq details[open] summary::after { content: "–"; }
 .faq details p { color: var(--muted); padding-bottom: 16px; margin: 0; }
 .on-dark .faq details p, .on-night .faq details p { color: var(--muted-dark); }
+
+/* ------------------------------------------------ booking details */
+
+.booking-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px 38px;
+  max-width: 720px;
+  padding: 25px 30px;
+  margin-bottom: 20px;
+  background: rgba(245, 247, 242, 0.04);
+  border: 1px solid var(--line-dark);
+  border-left: 4px solid var(--cone);
+  border-radius: var(--radius);
+}
+.booking-summary > div { flex: 1 1 230px; min-width: 0; }
+.booking-label {
+  margin: 0 0 8px;
+  color: var(--muted-dark);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+.booking-price {
+  margin: 0;
+  color: var(--chalk);
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  line-height: 1;
+}
+.booking-price span { font-size: 1.5rem; }
+.booking-methods { margin: 0 0 6px; color: var(--chalk); font-weight: 600; }
+.booking-note { margin: 0; color: var(--muted-dark); font-size: 0.88rem; line-height: 1.5; }
+@media (max-width: 640px) { .booking-summary { padding: 22px; } }
 
 /* ------------------------------------------------ forms */
 
