@@ -76,7 +76,7 @@
         <li><a href="training.html">Training</a></li>
         <li><a href="film-room.html">Film Room</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a class="nav-cta" href="#contact">Start training</a></li>
+        <li><a class="nav-cta" href="#contact">Book Sessions</a></li>
       </ul>
     </div>
   </header>
@@ -90,8 +90,9 @@
           <p class="eyebrow">Alexandria, Virginia · Est. 2013</p>
           <h1>Smart players<br>are <span class="accent">built</span>,<br>not found.</h1>
           <p class="hero-sub">Private soccer training and game-film analysis for players who want more than extra touches — technical skill, tactical intelligence, and a plan for both.</p>
+          <p class="hero-rate"><strong>$80 per hour</strong> · Soccer training sessions</p>
           <div class="hero-ctas">
-            <a class="btn btn-cone" href="#contact">Start training</a>
+            <a class="btn btn-cone" href="#contact">Book Sessions</a>
             <a class="btn btn-ghost" href="film-room.html">Submit your game film</a>
           </div>
           <ul class="hero-cred">
@@ -233,8 +234,20 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Kickoff</p>
-          <h2>Start training</h2>
-          <p class="lede">Tell me about your player. I reply personally within 48 hours, and I handle training requests in the order they arrive.</p>
+          <h2>Book Sessions</h2>
+          <p class="lede">Request a session for your player. I'll reply personally within 48 hours to confirm availability and the training location before your booking is finalized.</p>
+        </div>
+
+        <div class="booking-summary" aria-label="Session pricing and payment information">
+          <div>
+            <p class="booking-label">Training rate</p>
+            <p class="booking-price">$80 <span>/ hour</span></p>
+          </div>
+          <div>
+            <p class="booking-label">Payment options</p>
+            <p class="booking-methods">Venmo · Zelle · Cash</p>
+            <p class="booking-note">Payment details are shared after your session is confirmed. Stripe online checkout is not available yet.</p>
+          </div>
         </div>
 
         <form class="form-shell" action="https://formspree.io/f/mjgnkwee" method="POST" data-dsl-form novalidate="">
@@ -277,14 +290,18 @@
               </select>
             </div>
             <div class="full">
-              <label for="c-msg">Anything else? <span class="hint">(position, club, goals, availability)</span></label>
+              <label for="c-time">Preferred session day / time <span class="hint">(optional)</span></label>
+              <input id="c-time" name="preferred_session_time" type="text" placeholder="e.g. Tuesdays after 4 pm">
+            </div>
+            <div class="full">
+              <label for="c-msg">Anything else? <span class="hint">(position, club, goals)</span></label>
               <textarea id="c-msg" name="message"></textarea>
             </div>
           </div>
           <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="hidden" name="_subject" value="New training inquiry — Cerebral Soccer website">
+          <input type="hidden" name="_subject" value="New session booking request — Cerebral Soccer website">
           <div class="form-status" role="status" aria-live="polite"></div>
-          <p class="form-note"><button class="btn btn-cone" type="submit" data-label="Send inquiry">Send inquiry</button></p>
+          <p class="form-note"><button class="btn btn-cone" type="submit" data-label="Request Session">Request Session</button></p>
         </form>
       </div>
     </section>
@@ -306,7 +323,7 @@
             <li><a href="training.html">Training</a></li>
             <li><a href="film-room.html">Film Room</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="index.html#contact">Start training</a></li>
+            <li><a href="index.html#contact">Book Sessions</a></li>
           </ul>
         </div>
         <div>
